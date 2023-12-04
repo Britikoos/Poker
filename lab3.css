@@ -1,0 +1,93 @@
+body {
+    margin: 10px;
+    padding: 10px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: white;
+}
+
+nav {
+    display: flex;
+    padding: 10px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-left: 10px;
+}
+
+main {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /*позволяет элементам переноситься на новую строку при нехватке места по горизонтали.*/
+}
+
+.card {
+    background: bisque;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 10px;
+    width: calc(33% - 20px);
+}
+
+
+.paint{
+    width:  100px;
+    height: 100px;
+}
+
+table {
+    display: grid;
+}
+/*
+.paint {
+    display: block;
+}
+*/
+@media screen and (max-width: 768px) {
+    .img {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 10px), (orientation: landscape){
+    .img {
+        display: flex;
+    }
+}
+
+table {
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: darkturquoise;
+}
+
+.listnav {
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
