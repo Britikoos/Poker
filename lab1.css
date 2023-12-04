@@ -1,0 +1,50 @@
+h2, h1, h3, h4, h5,h6{
+    font-family: "Bold Italic Art";
+    background-color: darkkhaki;
+    color: black;
+    padding-left: 100px;
+    text-indent: each-line;
+}
+
+nav{
+    display: flex;
+    text-decoration: underline;
+    font-style: italic;
+    padding: 10px;
+    align-items: center;
+}
+p {
+    font-size: x-large;
+    background-color: antiquewhite;
+    color: burlywood;
+}
+body{
+    background-color: bisque;
+}
+img {
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 15px 10px #000;
+}
+[href^="https"]{
+    background-color: bisque;
+}
+
+[class|="list"]{
+    line-height: initial;
+    font-family: Castellar;
+    background-color: burlywood;
+    font-weight: bold;
+}
+blockquote{
+    font-family: "Arial Black";
+    font-weight: bolder;
+}
+footer{
+    padding: 20px;
+}
+sub, sup{
+    font-size: medium;
+}
