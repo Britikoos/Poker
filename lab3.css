@@ -1,6 +1,6 @@
 body {
-    margin: 10px;
-    padding: 10px;
+    margin: 10px; /*определяет внешний отступ на всех четырёх сторонах элемента*/
+    padding: 10px; /*устанавливает внутренние отступы/поля со всех сторон элемента*/
 }
 
 header {
@@ -16,7 +16,7 @@ nav {
 
 ul {
     display: flex;
-    list-style-type: none;
+    list-style-type: none; /*задаёт тип маркеров для использования в списке*/
     margin: 0;
     padding: 0;
 }
@@ -39,7 +39,7 @@ main {
     border-radius: 5px;
     text-align: center;
     margin: 10px;
-    width: calc(33% - 20px);
+    width: 35%;
 }
 
 
@@ -48,9 +48,26 @@ main {
     height: 100px;
 }
 
-table {
+.container tbody tr{
     display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    justify-content: center;
+    grid-gap: 10px;
+    width: 100%;
+
 }
+
+
+.containertable{
+  padding: 20px;
+  text-align: center;
+}
+
+.container tbody, thead {
+    display: contents;
+}
+
+
 /*
 .paint {
     display: block;
@@ -59,18 +76,25 @@ table {
 @media screen and (max-width: 768px) {
     .img {
         display: flex;
+        width:  500px;
+        height: 500px;
+    }
+    .target {
+        display: none;
     }
 }
 
-@media screen and (min-width: 10px), (orientation: landscape){
+@media and (min-width: 10px), (orientation: landscape){
     .img {
+        display: flex;
+        width:  5px;
+        height: 5px;
+    }
+    .target {
         display: flex;
     }
 }
 
-table {
-    width: 100%;
-}
 
 th, td {
     padding: 10px;
@@ -78,9 +102,12 @@ th, td {
     text-align: left;
 }
 
-tr:nth-child(even) {
+
+
+.container tbody tr:nth-child(even) {
     background-color: darkturquoise;
 }
+
 
 .listnav {
     position: sticky;
