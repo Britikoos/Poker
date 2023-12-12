@@ -48,31 +48,42 @@ main {
     height: 100px;
 }
 
-.container tbody tr{
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    justify-content: center;
-    grid-gap: 10px;
-    width: 100%;
-
-}
-
-
-.containertable{
+.block_menu_news {
+  background-color: #dce8f2;
   padding: 20px;
   text-align: center;
 }
 
-.container tbody, thead {
-    display: contents;
+.table_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.table_container thead, tbody, tr {
+  display: contents;
+}
+.table_container th {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: ;
+}
+
+.table_container thead, tbody, tr {
+  display: contents;
+}
+
+.table_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.table_container tbody tr:nth-child(2n+1) td {
+  background-color: aquamarine;
 }
 
 
-/*
-.paint {
-    display: block;
-}
-*/
 @media screen and (max-width: 768px) {
     .img {
         display: flex;
@@ -84,7 +95,7 @@ main {
     }
 }
 
-@media and (min-width: 10px), (orientation: landscape){
+@media and (min-width: 100px), (orientation: landscape){
     .img {
         display: flex;
         width:  5px;
@@ -93,21 +104,10 @@ main {
     .target {
         display: flex;
     }
+    .info{
+        display: flex;
+    }
 }
-
-
-th, td {
-    padding: 10px;
-    border: 1px solid black;
-    text-align: left;
-}
-
-
-
-.container tbody tr:nth-child(even) {
-    background-color: darkturquoise;
-}
-
 
 .listnav {
     position: sticky;
