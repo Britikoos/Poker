@@ -11,6 +11,6 @@
     var footer = document.getElementById('pageFooter');
 
     // Вставляем информацию о времени загрузки в подвал
-    footer.innerHTML = 'Время загрузки страницы: ' +  loadTime + ' seconds';
+    footer.innerHTML = 'Время загрузки страницы: ' +  loadTime + ' ms';
   });
 })();
