@@ -70,9 +70,6 @@ main {
   background-color: #eaeaea;
 }
 
-.menu li.active {
-    /* Ваши стили для активного пункта меню */
-    font-weight: bold; /* Например, сделаем текст жирным */
-    color: tomato; /* Изменим цвет текста */
-    text-decoration: underline; /* Подчеркивание для активного пункта */
+.menu li a.active {
+    color: tomato; /* ваш стиль для активной кнопки */
 }
