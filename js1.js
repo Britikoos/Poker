@@ -1,25 +1,17 @@
 (function() {
-  // Создаем начальную метку "startLoad"
-  performance.mark('startLoad');
+  // Функция для измерения времени загрузки страницы
+  var startTime = performance.now();
 
   // Событие загрузки страницы
   window.addEventListener('load', function() {
-    // Создаем конечную метку "endLoad"
-    performance.mark('endLoad');
+    var endTime = performance.now();
+    var loadTime = performance.now();
+    console.log(performance.now());
 
-    // Измеряем время между начальной и конечной метками
-    performance.measure('pageLoadTime', 'startLoad', 'endLoad');
-    
-    // Получаем результат измерения
-    var measures = performance.getEntriesByName('pageLoadTime');
-    if (measures.length > 0) {
-      var loadTime = measures[0].duration;
+    // Получаем элемент footer по его id
+    var footer = document.getElementById('pageFooter');
 
-      // Получаем элемент footer по его id
-      var footer = document.getElementById('pageFooter');
-
-      // Вставляем информацию о времени загрузки в подвал
-      footer.innerHTML = 'Время загрузки страницы: ' + loadTime.toFixed(2) + ' ms';
-    }
+    // Вставляем информацию о времени загрузки в подвал
+    footer.innerHTML = 'Время загрузки страницы: ' +  loadTime + ' seconds';
   });
 })();
