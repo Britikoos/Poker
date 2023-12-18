@@ -13,13 +13,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Получение значения задачи из формы
         const taskInput = document.getElementById('task');
+        //спользуется для получения текстового содержимого (значения) элемента формы taskInput
         const taskText = taskInput.value.trim();
 
         if (taskText) {
             // Добавление задачи в массив
             savedTasks.push(taskText);
 
-            // Сохранение массива задач в localStorage
+            // Сохранение массива задач в localStorage  stringify общий формат для представления значений и объектов.
             localStorage.setItem('tasks', JSON.stringify(savedTasks));
 
             // Отображение задачи
