@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+    <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://igrasfera.ru/upload/iblock/06d/4h9yy8phv0e0r0yd5yyhrnbfe2zw18i0.jpg", alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="https://igrasfera.ru/upload/iblock/06d/4h9yy8phv0e0r0yd5yyhrnbfe2zw18i0.jpg", alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="https://igrasfera.ru/upload/iblock/06d/4h9yy8phv0e0r0yd5yyhrnbfe2zw18i0.jpg", alt="Slide 3"></div>
+      <div class="swiper-slide"><img src="https://igrasfera.ru/upload/iblock/06d/4h9yy8phv0e0r0yd5yyhrnbfe2zw18i0.jpg", alt="Slide 4"></div>
+      <div class="swiper-slide"><img src="https://igrasfera.ru/upload/iblock/06d/4h9yy8phv0e0r0yd5yyhrnbfe2zw18i0.jpg", alt="Slide 5"></div>
+      <div class="swiper-slide"><img src="https://igrasfera.ru/upload/iblock/06d/4h9yy8phv0e0r0yd5yyhrnbfe2zw18i0.jpg", alt="Slide 6"></div>
+      <div class="swiper-slide"><img src="https://igrasfera.ru/upload/iblock/06d/4h9yy8phv0e0r0yd5yyhrnbfe2zw18i0.jpg", alt="Slide 7"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div> 
+    <div class="swiper-button-next"></div> 
+</div>
+
+
+    <button id="openModalButton">Регистрация на сайте</button>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalButton">&times;</span>
+            <h2>Введите имя и логин</h2>
+            <input type="text" id="nameInput" placeholder="Имя">
+            <input type="text" id="loginInput" placeholder="Логин">
+            <button id="submitDataButton">Отправить</button>
+        </div>
+    </div>
+    <script src="modal.js"></script>
+    <script src="swiper.js"></script>
+</body>
+</html>
