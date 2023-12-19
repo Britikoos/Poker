@@ -62,3 +62,8 @@ input {
   height: 100%;
   object-fit: cover;
 }
+
+div .swiper-button-prev,
+div .swiper-button-next {
+    color: black;
+}
