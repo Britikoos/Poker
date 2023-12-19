@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const todoForm = document.getElementById('todoForm');
     const taskList = document.getElementById('taskList');
+    const emptyTaskItems = taskList.querySelectorAll('.empty-task-item');
 
     // Загрузка задач из localStorage
     let savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
@@ -28,35 +29,31 @@ document.addEventListener('DOMContentLoaded', function () {
             // Очистка поля ввода
             taskInput.value = '';
         } else {
-    // Вывод сообщения об ошибке или другого уведомления
-    alert('Пожалуйста, введите текст задачи.');
-}
+            alert('Пожалуйста, введите текст задачи.');
+        }
     });
 
     // Функция для отображения задачи
     function displayTask(taskText) {
-        const taskDiv = document.createElement('div');
-        const deleteButton = document.createElement('button'); // Создаем кнопку для удаления задачи
-        deleteButton.textContent = 'Удалить'; // Устанавливаем текст на кнопке
-        taskDiv.textContent = taskText;
-        taskDiv.appendChild(deleteButton); // Добавляем кнопку удаления к задаче
-        taskList.appendChild(taskDiv);
+        const emptyTaskItem = Array.from(emptyTaskItems).find(item => item.textContent === '');
+        if (emptyTaskItem) {
+            emptyTaskItem.textContent = taskText;
 
-        // Обработчик события для кнопки удаления
-        deleteButton.addEventListener('click', function () {
-            // Находим индекс задачи в массиве
-            const index = savedTasks.indexOf(taskText);
-            if (index !== -1) {
-                // Удаляем задачу из массива
-                savedTasks.splice(index, 1);
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Удалить';
+            deleteButton.addEventListener('click', function () {
+                const taskIndex = savedTasks.indexOf(taskText);
+                if (taskIndex !== -1) {
+                    savedTasks.splice(taskIndex, 1);
+                    localStorage.setItem('tasks', JSON.stringify(savedTasks));
+                    emptyTaskItem.textContent = '';
+                }
+            });
 
-                // Обновляем localStorage
-                localStorage.setItem('tasks', JSON.stringify(savedTasks));
-
-                // Удаляем задачу из отображения
-                taskList.removeChild(taskDiv);
-            }
-        });
+            emptyTaskItem.appendChild(deleteButton);
+        } else {
+            alert('Нет доступных ячеек для отображения задачи.');
+        }
     }
 
     // Функция для отображения ранее сохраненных задач
