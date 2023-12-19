@@ -18,17 +18,21 @@ const nameInput = document.getElementById('nameInput');
 const loginInput = document.getElementById('loginInput');
 
 submitDataButton.addEventListener('click', () => {
-    const name = nameInput.value;
-    const login = loginInput.value;
+    const name = nameInput.value.trim();
+    const login = loginInput.value.trim();
 
-    // Делайте что-то с данными, например, отправьте их на сервер
-    console.log('Имя:', name);
-    console.log('Логин:', login);
+    if (!name) {
+        alert('Пожалуйста, введите name.');
+    } else if (!login) {
+        alert('Пожалуйста, введите login.');
+    } else {
+        console.log('Имя:', name);
+        console.log('Логин:', login);
 
-    // Закройте модальное окно
-    modal.style.display = 'none';
+        modal.style.display = 'none';
 
-    // Очистите поля ввода
-    nameInput.value = '';
-    loginInput.value = '';
+        nameInput.value = '';
+        loginInput.value = '';
+    }
+    
 });
