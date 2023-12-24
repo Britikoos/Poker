@@ -1,0 +1,75 @@
+body {
+    margin: 10px;
+    padding: 10px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: white;
+}
+
+nav {
+    display: flex;
+    padding: 10px;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin-left: 10px;
+}
+
+main {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /*позволяет элементам переноситься на новую строку при нехватке места по горизонтали.*/
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+}
+
+.menu li:hover {
+    background-color: black;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+/* Стили для при наведении */
+.menu li:hover {
+  background-color: #eaeaea;
+}
+
+.menu li a.active {
+    color: tomato;
+}
