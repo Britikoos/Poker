@@ -40,3 +40,7 @@ h1 {
     height: 100 px;
     border: 1px green;
 }
+
+.button {
+    position: initial;
+}
