@@ -4,10 +4,15 @@ function hidePreloader() {
     preloader.style.display = 'none';
 }
 
+function showPreloader() {
+    const preloader = document.getElementById('preloader');
+    preloader.style.display = 'block'; // Показываем preloader
+}
+
 // Функция для обработки данных и отображения их на странице
 function renderData(data) {
     const content = document.getElementById('content');
-    
+
     // Создаем таблицу
     const table = document.createElement('table');
 
@@ -15,11 +20,16 @@ function renderData(data) {
     const thead = document.createElement('thead');
     const headerRow = document.createElement('tr');
     const headers = ["title", "completed"]; // Замените заголовки на свои
-    headers.forEach(headerText => {
-        const th = document.createElement('th');
-        th.textContent = headerText;
-        headerRow.appendChild(th);
-    });
+    
+
+    for (let i = 0; i < 10; i++) {
+    const th = document.createElement("th");
+    th.textContent = headers[i] || ""; // Используем заголовок или пустую строку, если заголовок не существует
+    headerRow.appendChild(th);
+}
+
+thead.appendChild(headerRow);
+table.appendChild(thead);
     thead.appendChild(headerRow);
     table.appendChild(thead);
 
@@ -42,7 +52,6 @@ function renderData(data) {
     content.appendChild(table);
 }
 
-
 // Функция для выполнения запроса с помощью Fetch API и возврата Promise
 function fetchWithPromise(url, options) {
     return new Promise((resolve, reject) => {
@@ -62,13 +71,13 @@ function fetchWithPromise(url, options) {
     });
 }
 
-// Функция для выполнения запроса с псевдослучайной фильтрацией
+// Функция для выполнения запроса с псевдослучайной фильтрацией и загрузки только 20 элементов
 async function fetchRandomData() {
     try {
-        const randomId = Math.floor(Math.random() * 101) + 100; // Генерация случайного ID
-        const url = `https://jsonplaceholder.typicode.com/todos?id_gte=${randomId}`;
+        const randomIds = Array.from({ length: 20 }, () => Math.floor(Math.random() * 200) + 1); // Генерация 20 случайных ID
+        const url = `https://jsonplaceholder.typicode.com/todos?id=${randomIds.join('&id=')}`; // Собираем URL с 20 случайными ID
         const options = { method: 'GET' };
-
+        showPreloader();
         const data = await fetchWithPromise(url, options);
         renderData(data);
         hidePreloader();
@@ -88,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchWithPromise(url, options)
         .then(data => {
+            showPreloader();
             renderData(data);
             hidePreloader();
         })
